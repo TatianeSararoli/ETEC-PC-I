@@ -45,99 +45,99 @@ JTextField txtVisor = new JTextField();
 		Container paine = this.getContentPane();
 		paine.setLayout(null);
 		
-		txtVisor.setBounds(20, 25, 180, 50);
+		txtVisor.setBounds(10, 30, 195, 51);
 		paine.add(txtVisor);
 		
-		btnMC.setBounds(20, 20, 10, 10);
+		btnMC.setBounds(10, 86, 33, 27);
 		paine.add(btnMC);
 		
-		btnMR.setBounds(20, 20, 10, 10);
+		btnMR.setBounds(50, 86, 33, 27);
 		paine.add(btnMR);
 		
-		btnMS.setBounds(20, 20, 10, 10);
+		btnMS.setBounds(90, 86, 33, 27);
 		paine.add(btnMS);
 		
-		btnMMais.setBounds(20, 20, 10, 10);
+		btnMMais.setBounds(130, 86, 33, 27);
 		paine.add(btnMMais);
 		
-		btnMMenos.setBounds(20, 20, 10, 10);
+		btnMMenos.setBounds(170, 86, 33, 27);
 		paine.add(btnMMenos);
 		
-		btnBksp.setBounds(20, 20, 10, 10);
+		btnBksp.setBounds(210, 116, 33, 27);
 		paine.add(btnBksp);
 		
-		btnCE.setBounds(20, 20, 10, 10);
+		btnCE.setBounds(250, 116, 33, 27);
 		paine.add(btnCE);
 		
-		btnC.setBounds(20, 20, 10, 10);
+		btnC.setBounds(290, 116, 33, 27);
 		paine.add(btnC);
 		
-		btnMaisMenos.setBounds(20, 20, 10, 10);
+		btnMaisMenos.setBounds(20, 116, 33, 27);
 		paine.add(btnMaisMenos);
 		
-		btnRaiz.setBounds(20, 20, 10, 10);
+		btnRaiz.setBounds(20, 116, 33, 27);
 		paine.add(btnRaiz);
 		
-		btnSete.setBounds(20, 20, 10, 10);
+		btnSete.setBounds(10, 146, 33, 27);
 		paine.add(btnSete);
 		
-		btnOito.setBounds(20, 20, 10, 10);
+		btnOito.setBounds(20, 20, 33, 27);
 		paine.add(btnOito);
 		
-		btnNove.setBounds(20, 20, 10, 10);
+		btnNove.setBounds(20, 20, 33, 27);
 		paine.add(btnNove);
 		
-		btnDiv.setBounds(20, 20, 10, 10);
+		btnDiv.setBounds(20, 20, 33, 27);
 		paine.add(btnDiv);
 		
-		btnPorc.setBounds(20, 20, 10, 10);
+		btnPorc.setBounds(20, 20, 33, 27);
 		paine.add(btnPorc);
 		
-		btnQuatro.setBounds(20, 20, 10, 10);
+		btnQuatro.setBounds(10, 176, 33, 27);
 		paine.add(btnQuatro);
 		
-		btnCinco.setBounds(20, 20, 10, 10);
+		btnCinco.setBounds(20, 20, 33, 27);
 		paine.add(btnCinco);
 		
-		btnSeis.setBounds(20, 20, 10, 10);
+		btnSeis.setBounds(20, 20, 33, 27);
 		paine.add(btnSeis);
 		
-		btnMult.setBounds(20, 20, 10, 10);
+		btnMult.setBounds(20, 20, 33, 27);
 		paine.add(btnMult);
 		
-		btnUmx.setBounds(20, 20, 10, 10);
+		btnUmx.setBounds(20, 20, 33, 27);
 		paine.add(btnUmx);
 		
-		btnHum.setBounds(20, 20, 10, 10);
+		btnHum.setBounds(10, 206, 33, 27);
 		paine.add(btnHum);
 		
-		btnDois.setBounds(20, 20, 10, 10);
+		btnDois.setBounds(20, 20, 33, 27);
 		paine.add(btnDois);
 		
-		btnTres.setBounds(20, 20, 10, 10);
+		btnTres.setBounds(20, 20, 33, 27);
 		paine.add(btnTres);
 		
-		btnMenos.setBounds(20, 20, 10, 10);
+		btnMenos.setBounds(20, 20, 33, 27);
 		paine.add(btnMenos);
 		
-		btnIgual.setBounds(20, 20, 10, 10);
+		btnIgual.setBounds(20, 20, 33, 27);
 		paine.add(btnIgual);
 		
-		btnZero.setBounds(20, 20, 10, 10);
+		btnZero.setBounds(10, 236, 33, 27);
 		paine.add(btnZero);
 		
-		btnVirg.setBounds(20, 20, 10, 10);
+		btnVirg.setBounds(20, 20, 33, 27);
 		paine.add(btnVirg);
 		
-		btnMais.setBounds(20, 20, 10, 10);
+		btnMais.setBounds(20, 20, 33, 27);
 		paine.add(btnMais);
 	
-		/*seuBotao.setMargin(new Insets(1,1,1,1));
-		button.setFont( new Font( "Arial", FONT.PLAIN, 12 ) );
+		/*btnMC.setMargin(new Insets(1,1,1,1));
+		btnMC.setFont( new Font( "Arial", FONT.PLAIN, 12 ) );
 		seuJButton.setBorder(null);
 		seuJButton.setContentAreaFilled(false);*/
 			
-		this.setSize(220, 310);
+		this.setSize(218, 312);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setResizable(false);	
