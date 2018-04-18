@@ -97,7 +97,7 @@ JTextField txtVisor = new JTextField("0");
 		Ajuda.setBounds(91, 5, 45, 20);
 		menuBar.add(Ajuda);
 		
-		txtVisor.setFont( new Font( "Arial", Font.PLAIN, 25 ) );
+		txtVisor.setFont( new Font( "Arial", Font.PLAIN, 20 ) );
 		txtVisor.setBounds(10, 30, 195, 51);
 		paine.add(txtVisor);
 		
@@ -130,21 +130,11 @@ JTextField txtVisor = new JTextField("0");
 		btnMMenos.setMargin(new Insets(1,1,1,1));
 		btnMMenos.setBounds(170, 86, 33, 27);
 		paine.add(btnMMenos);
-		btnMMenos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				sinal = "menos";
-			}
-		});
 		
 		btnBksp.setFont( new Font( "Wide Latin", Font.PLAIN, 12 ) );
 		btnBksp.setMargin(new Insets(1,1,1,1));
 		btnBksp.setBounds(10, 119, 33, 27);
 		paine.add(btnBksp);
-		btnBksp.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				txtVisor.setText("0");
-			}
-		});
 		
 		btnCE.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnCE.setMargin(new Insets(1,1,1,1));
@@ -170,23 +160,11 @@ JTextField txtVisor = new JTextField("0");
 		btnMaisMenos.setMargin(new Insets(1,1,1,1));
 		btnMaisMenos.setBounds(130, 119, 33, 27);
 		paine.add(btnMaisMenos);
-		btnMMenos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				sinal = "menos";
-			}
-		});
 		
 		btnRaiz.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnRaiz.setMargin(new Insets(1,1,1,1));
 		btnRaiz.setBounds(170, 119, 33, 27);
 		paine.add(btnRaiz);
-		btnRaiz.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				valor1 = Double.parseDouble(txtVisor.getText());
-				sinal = "divide";
-				txtVisor.setText("√");
-			}
-		});
 		
 		btnSete.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnSete.setMargin(new Insets(1,1,1,1));
@@ -194,7 +172,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnSete);
 		btnSete.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("7")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "7");
 				}
 				else {
@@ -209,7 +187,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnOito);
 		btnOito.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("8")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "8");
 				}
 				else {
@@ -224,7 +202,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnNove);
 		btnNove.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("9")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "9");
 				}
 				else {
@@ -237,25 +215,11 @@ JTextField txtVisor = new JTextField("0");
 		btnDiv.setMargin(new Insets(1,1,1,1));
 		btnDiv.setBounds(130, 152, 33, 27);
 		paine.add(btnDiv);
-		btnDiv.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				valor1 = Double.parseDouble(txtVisor.getText());
-				sinal = "divide";
-				txtVisor.setText("/");
-			}
-		});
 		
 		btnPorc.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnPorc.setMargin(new Insets(1,1,1,1));
 		btnPorc.setBounds(170, 152, 33, 27);
 		paine.add(btnPorc);
-		btnPorc.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				valor1 = Double.parseDouble(txtVisor.getText());
-				sinal = "porc";
-				txtVisor.setText("%");
-			}
-		});
 		
 		btnQuatro.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnQuatro.setMargin(new Insets(1,1,1,1));
@@ -263,7 +227,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnQuatro);
 		btnQuatro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("4")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "4");
 				}
 				else {
@@ -278,7 +242,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnCinco);
 		btnCinco.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("5")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "5");
 				}
 				else {
@@ -293,7 +257,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnSeis);
 		btnSeis.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("5")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "6");
 				}
 				else {
@@ -306,25 +270,11 @@ JTextField txtVisor = new JTextField("0");
 		btnMult.setMargin(new Insets(1,1,1,1));
 		btnMult.setBounds(130, 185, 33, 27);
 		paine.add(btnMult);
-		btnMult.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				valor1 = Double.parseDouble(txtVisor.getText());
-				sinal = "multiplica";
-				txtVisor.setText("*");
-			}
-		});
 		
 		btnUmx.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnUmx.setMargin(new Insets(1,1,1,1));
 		btnUmx.setBounds(170, 185, 33, 27);
 		paine.add(btnUmx);
-		btnUmx.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				valor1 = Double.parseDouble(txtVisor.getText());
-				sinal = "fracao";
-				txtVisor.setText("1/x");
-			}
-		});
 		
 		btnHum.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnHum.setMargin(new Insets(1,1,1,1));
@@ -332,7 +282,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnHum);
 		btnHum.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("1")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "1");
 				}
 				else {
@@ -347,7 +297,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnDois);
 		btnDois.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("2")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "2");
 				}
 				else {
@@ -362,7 +312,7 @@ JTextField txtVisor = new JTextField("0");
 		paine.add(btnTres);
 		btnTres.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(txtVisor.getText().equals("3")) {
+				if(txtVisor.getText().equals("0")) {
 					txtVisor.setText(txtVisor.getText() + "3");
 				}
 				else {
@@ -375,13 +325,6 @@ JTextField txtVisor = new JTextField("0");
 		btnMenos.setMargin(new Insets(1,1,1,1));
 		btnMenos.setBounds(130, 218, 33, 27);
 		paine.add(btnMenos);
-		btnMenos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				valor1 = Double.parseDouble(txtVisor.getText());
-				sinal = "subtrai";
-				txtVisor.setText("-");
-			}
-		});
 		
 		btnIgual.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnIgual.setMargin(new Insets(1,1,1,1));
@@ -393,27 +336,6 @@ JTextField txtVisor = new JTextField("0");
 				if(sinal.equals("soma")) {
 					txtVisor.setText(mat.soma(valor1, valor2) + "");
 				}
-				else if(sinal.equals("soma")) {
-					txtVisor.setText(mat.soma(valor1, valor2) + "");
-				}
-				else if(sinal.equals("soma")) {
-					txtVisor.setText(mat.soma(valor1, valor2) + "");
-				}
-				else if(sinal.equals("soma")) {
-					txtVisor.setText(mat.soma(valor1, valor2) + "");
-				}
-				else if(sinal.equals("soma")) {
-					txtVisor.setText(mat.soma(valor1, valor2) + "");
-				}
-				else if(sinal.equals("soma")) {
-					txtVisor.setText(mat.soma(valor1, valor2) + "");
-				}
-				else if(sinal.equals("soma")) {
-					txtVisor.setText(mat.soma(valor1, valor2) + "");
-				}
-				else if(sinal.equals("soma")) {
-					txtVisor.setText(mat.soma(valor1, valor2) + "");
-				}				
 			}
 		});
 		
@@ -436,11 +358,6 @@ JTextField txtVisor = new JTextField("0");
 		btnVirg.setMargin(new Insets(1,1,1,1));
 		btnVirg.setBounds(90, 251, 33, 27);
 		paine.add(btnVirg);
-		btnVirg.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				sinal = ",";
-			}
-		});
 		
 		btnMais.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnMais.setMargin(new Insets(1,1,1,1));
@@ -450,7 +367,7 @@ JTextField txtVisor = new JTextField("0");
 			public void actionPerformed(ActionEvent e) {
 				valor1 = Double.parseDouble(txtVisor.getText());
 				sinal = "soma";
-				txtVisor.setText("+");
+				txtVisor.setText("0");
 			}
 		});
 			
@@ -461,6 +378,7 @@ JTextField txtVisor = new JTextField("0");
 }
 
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
 		Calculadora calc = new Calculadora();
 	}
 }
