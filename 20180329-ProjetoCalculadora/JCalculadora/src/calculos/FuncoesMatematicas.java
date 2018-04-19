@@ -13,17 +13,17 @@ public class FuncoesMatematicas {
 	public double divide(double a, double b) {
 		return a/b;
 	}
-	public double maismenos(double a, double b) {
-		return a+b;
+	public double maismenos(double a) {
+		return a-a-a;
 	}
-	public double raiz(double a, double b) {
-		return a+b;
+	public double raiz(double a) {
+		return Math.sqrt(a);
 	}
 	public double porc(double a, double b) {
-		return a+b;
+		return a*(b/100);
 	}
-	public double fracao(double a, double b) {
-		return a+b;
+	public double fracao(double a) {
+		return 1/a;
 	}
 
 }
