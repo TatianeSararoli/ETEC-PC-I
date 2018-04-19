@@ -3,14 +3,37 @@ package view;
 import java.awt.Container;
 import java.awt.Font;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
+import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextField;
 
+import calculos.FuncoesMatematicas;
+
 public class Calculadora extends JFrame {
+
+ButtonGroup tipo = new ButtonGroup ();
 	
-JTextField txtVisor = new JTextField();
+	JMenu Exibir = new JMenu("Exibir");
+	JRadioButtonMenuItem radipadrao = new JRadioButtonMenuItem("Padão");
+	JRadioButtonMenuItem radicienti = new JRadioButtonMenuItem ("Científica");
+	JRadioButtonMenuItem radiprograma = new JRadioButtonMenuItem ("Programador");
+	JRadioButtonMenuItem radiestatist = new JRadioButtonMenuItem ("Estatística");
+	JCheckBoxMenuItem cbAgrupamento = new JCheckBoxMenuItem ("Agrupamento de Digitos");
+		
+	JMenu Editar = new JMenu("Editar");
+	JMenu Ajuda = new JMenu("Ajuda");
+	
+JMenuBar menuBar = new JMenuBar();
+	
+JTextField txtVisor = new JTextField("0");
 	
 	JButton btnMC = new JButton("MC");
 	JButton btnMR = new JButton("MR");
@@ -41,11 +64,38 @@ JTextField txtVisor = new JTextField();
 	JButton btnVirg = new JButton(",");
 	JButton btnMais = new JButton("+");
 	
+	FuncoesMatematicas mat = new FuncoesMatematicas();
+	String sinal = null;
+	double valor1 = 0, valor2 = 0;
+	
 	public Calculadora() {
 		super ("Calculadora");
 		
 		Container paine = this.getContentPane();
 		paine.setLayout(null);
+		
+		menuBar.setBounds(0, 0, 228, 25);
+		paine.add(menuBar);
+		
+		Exibir.setFont( new Font( "Arial", Font.PLAIN, 12 ));
+		Exibir.setBounds(1, 5, 45, 20);
+		menuBar.add(Exibir);
+		Exibir.add(radipadrao);
+		Exibir.add(radicienti);
+		Exibir.add(radiprograma);
+		Exibir.add(radiestatist);
+		Exibir.addSeparator();
+		Exibir.add("Histórico       Crtl + H");
+		Exibir.add(cbAgrupamento);
+		Exibir.addSeparator();
+		
+		Editar.setFont( new Font( "Arial", Font.PLAIN, 12 ));
+		Editar.setBounds(46, 5, 45, 20);
+		menuBar.add(Editar);
+		
+		Ajuda.setFont( new Font( "Arial", Font.PLAIN, 12 ));
+		Ajuda.setBounds(91, 5, 45, 20);
+		menuBar.add(Ajuda);
 		
 		txtVisor.setFont( new Font( "Arial", Font.PLAIN, 20 ) );
 		txtVisor.setBounds(10, 30, 195, 51);
@@ -70,6 +120,11 @@ JTextField txtVisor = new JTextField();
 		btnMMais.setMargin(new Insets(1,1,1,1));
 		btnMMais.setBounds(130, 86, 33, 27);
 		paine.add(btnMMais);
+		btnMMais.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sinal = "soma";
+			}
+		});
 		
 		btnMMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnMMenos.setMargin(new Insets(1,1,1,1));
@@ -85,11 +140,21 @@ JTextField txtVisor = new JTextField();
 		btnCE.setMargin(new Insets(1,1,1,1));
 		btnCE.setBounds(50, 119, 33, 27);
 		paine.add(btnCE);
+		btnCE.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtVisor.setText("0");
+			}
+		});
 		
 		btnC.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnC.setMargin(new Insets(1,1,1,1));
 		btnC.setBounds(90, 119, 33, 27);
 		paine.add(btnC);
+		btnC.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				txtVisor.setText("0");
+			}
+		});
 		
 		btnMaisMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnMaisMenos.setMargin(new Insets(1,1,1,1));
@@ -101,20 +166,50 @@ JTextField txtVisor = new JTextField();
 		btnRaiz.setBounds(170, 119, 33, 27);
 		paine.add(btnRaiz);
 		
-		btnSete.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnSete.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnSete.setMargin(new Insets(1,1,1,1));
 		btnSete.setBounds(10, 152, 33, 27);
 		paine.add(btnSete);
+		btnSete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "7");
+				}
+				else {
+					txtVisor.setText("7");
+				}
+			}
+		});
 		
-		btnOito.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnOito.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnOito.setMargin(new Insets(1,1,1,1));
 		btnOito.setBounds(50, 152, 33, 27);
 		paine.add(btnOito);
+		btnOito.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "8");
+				}
+				else {
+					txtVisor.setText("8");
+				}
+			}
+		});
 		
-		btnNove.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnNove.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnNove.setMargin(new Insets(1,1,1,1));
 		btnNove.setBounds(90, 152, 33, 27);
 		paine.add(btnNove);
+		btnNove.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "9");
+				}
+				else {
+					txtVisor.setText("9");
+				}
+			}
+		});
 		
 		btnDiv.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnDiv.setMargin(new Insets(1,1,1,1));
@@ -126,20 +221,50 @@ JTextField txtVisor = new JTextField();
 		btnPorc.setBounds(170, 152, 33, 27);
 		paine.add(btnPorc);
 		
-		btnQuatro.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnQuatro.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnQuatro.setMargin(new Insets(1,1,1,1));
 		btnQuatro.setBounds(10, 185, 33, 27);
 		paine.add(btnQuatro);
+		btnQuatro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "4");
+				}
+				else {
+					txtVisor.setText("4");
+				}
+			}
+		});
 		
-		btnCinco.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnCinco.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnCinco.setMargin(new Insets(1,1,1,1));
 		btnCinco.setBounds(50, 185, 33, 27);
 		paine.add(btnCinco);
+		btnCinco.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "5");
+				}
+				else {
+					txtVisor.setText("5");
+				}
+			}
+		});
 		
-		btnSeis.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnSeis.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnSeis.setMargin(new Insets(1,1,1,1));
 		btnSeis.setBounds(90, 185, 33, 27);
 		paine.add(btnSeis);
+		btnSeis.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "6");
+				}
+				else {
+					txtVisor.setText("6");
+				}
+			}
+		});
 		
 		btnMult.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnMult.setMargin(new Insets(1,1,1,1));
@@ -151,20 +276,50 @@ JTextField txtVisor = new JTextField();
 		btnUmx.setBounds(170, 185, 33, 27);
 		paine.add(btnUmx);
 		
-		btnHum.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnHum.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnHum.setMargin(new Insets(1,1,1,1));
 		btnHum.setBounds(10, 218, 33, 27);
 		paine.add(btnHum);
+		btnHum.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "1");
+				}
+				else {
+					txtVisor.setText("1");
+				}
+			}
+		});
 		
-		btnDois.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnDois.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnDois.setMargin(new Insets(1,1,1,1));
 		btnDois.setBounds(50, 218, 33, 27);
 		paine.add(btnDois);
+		btnDois.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "2");
+				}
+				else {
+					txtVisor.setText("2");
+				}
+			}
+		});
 		
-		btnTres.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnTres.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnTres.setMargin(new Insets(1,1,1,1));
 		btnTres.setBounds(90, 218, 33, 27);
 		paine.add(btnTres);
+		btnTres.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "3");
+				}
+				else {
+					txtVisor.setText("3");
+				}
+			}
+		});
 		
 		btnMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnMenos.setMargin(new Insets(1,1,1,1));
@@ -175,11 +330,29 @@ JTextField txtVisor = new JTextField();
 		btnIgual.setMargin(new Insets(1,1,1,1));
 		btnIgual.setBounds(170, 218, 33, 60);
 		paine.add(btnIgual);
+		btnIgual.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor2 = Double.parseDouble(txtVisor.getText());
+				if(sinal.equals("soma")) {
+					txtVisor.setText(mat.soma(valor1, valor2) + "");
+				}
+			}
+		});
 		
-		btnZero.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnZero.setFont( new Font( "Arial", Font.PLAIN, 15 ) );
 		btnZero.setMargin(new Insets(1,1,1,1));
 		btnZero.setBounds(10, 251, 73, 27);
 		paine.add(btnZero);
+		btnZero.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtVisor.getText().equals("0")) {
+					txtVisor.setText(txtVisor.getText() + "0");
+				}
+				else {
+					txtVisor.setText("0");
+				}
+			}
+		});
 		
 		btnVirg.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
 		btnVirg.setMargin(new Insets(1,1,1,1));
@@ -190,18 +363,22 @@ JTextField txtVisor = new JTextField();
 		btnMais.setMargin(new Insets(1,1,1,1));
 		btnMais.setBounds(130, 251, 33, 27);
 		paine.add(btnMais);
+		btnMais.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				valor1 = Double.parseDouble(txtVisor.getText());
+				sinal = "soma";
+				txtVisor.setText("0");
+			}
+		});
 			
 		this.setSize(218, 312);
 		this.setVisible(true);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(false);	
-	
+		this.setResizable(false);
 }
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Calculadora calc = new Calculadora();
-
 	}
-
 }
