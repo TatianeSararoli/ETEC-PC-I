@@ -1,6 +1,8 @@
 package view;
 
 import java.awt.Container;
+import java.awt.Font;
+import java.awt.Insets;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -15,7 +17,7 @@ JTextField txtVisor = new JTextField();
 	JButton btnMS = new JButton("MS");
 	JButton btnMMais = new JButton("M+");
 	JButton btnMMenos = new JButton("M-");
-	JButton btnBksp = new JButton("Bksp");
+	JButton btnBksp = new JButton("<---");
 	JButton btnCE = new JButton("CE");
 	JButton btnC = new JButton("C");
 	JButton btnMaisMenos = new JButton("±");
@@ -45,97 +47,149 @@ JTextField txtVisor = new JTextField();
 		Container paine = this.getContentPane();
 		paine.setLayout(null);
 		
+		txtVisor.setFont( new Font( "Arial", Font.PLAIN, 20 ) );
 		txtVisor.setBounds(10, 30, 195, 51);
 		paine.add(txtVisor);
 		
+		btnMC.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMC.setMargin(new Insets(1,1,1,1));
 		btnMC.setBounds(10, 86, 33, 27);
 		paine.add(btnMC);
-		
+
+		btnMR.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMR.setMargin(new Insets(1,1,1,1));
 		btnMR.setBounds(50, 86, 33, 27);
 		paine.add(btnMR);
 		
+		btnMS.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMS.setMargin(new Insets(1,1,1,1));
 		btnMS.setBounds(90, 86, 33, 27);
 		paine.add(btnMS);
 		
+		btnMMais.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMMais.setMargin(new Insets(1,1,1,1));
 		btnMMais.setBounds(130, 86, 33, 27);
 		paine.add(btnMMais);
 		
+		btnMMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMMenos.setMargin(new Insets(1,1,1,1));
 		btnMMenos.setBounds(170, 86, 33, 27);
 		paine.add(btnMMenos);
 		
-		btnBksp.setBounds(210, 116, 33, 27);
+		btnBksp.setFont( new Font( "Wide Latin", Font.PLAIN, 12 ) );
+		btnBksp.setMargin(new Insets(1,1,1,1));
+		btnBksp.setBounds(10, 119, 33, 27);
 		paine.add(btnBksp);
 		
-		btnCE.setBounds(250, 116, 33, 27);
+		btnCE.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnCE.setMargin(new Insets(1,1,1,1));
+		btnCE.setBounds(50, 119, 33, 27);
 		paine.add(btnCE);
 		
-		btnC.setBounds(290, 116, 33, 27);
+		btnC.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnC.setMargin(new Insets(1,1,1,1));
+		btnC.setBounds(90, 119, 33, 27);
 		paine.add(btnC);
 		
-		btnMaisMenos.setBounds(20, 116, 33, 27);
+		btnMaisMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMaisMenos.setMargin(new Insets(1,1,1,1));
+		btnMaisMenos.setBounds(130, 119, 33, 27);
 		paine.add(btnMaisMenos);
 		
-		btnRaiz.setBounds(20, 116, 33, 27);
+		btnRaiz.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnRaiz.setMargin(new Insets(1,1,1,1));
+		btnRaiz.setBounds(170, 119, 33, 27);
 		paine.add(btnRaiz);
 		
-		btnSete.setBounds(10, 146, 33, 27);
+		btnSete.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnSete.setMargin(new Insets(1,1,1,1));
+		btnSete.setBounds(10, 152, 33, 27);
 		paine.add(btnSete);
 		
-		btnOito.setBounds(20, 20, 33, 27);
+		btnOito.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnOito.setMargin(new Insets(1,1,1,1));
+		btnOito.setBounds(50, 152, 33, 27);
 		paine.add(btnOito);
 		
-		btnNove.setBounds(20, 20, 33, 27);
+		btnNove.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnNove.setMargin(new Insets(1,1,1,1));
+		btnNove.setBounds(90, 152, 33, 27);
 		paine.add(btnNove);
 		
-		btnDiv.setBounds(20, 20, 33, 27);
+		btnDiv.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnDiv.setMargin(new Insets(1,1,1,1));
+		btnDiv.setBounds(130, 152, 33, 27);
 		paine.add(btnDiv);
 		
-		btnPorc.setBounds(20, 20, 33, 27);
+		btnPorc.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnPorc.setMargin(new Insets(1,1,1,1));
+		btnPorc.setBounds(170, 152, 33, 27);
 		paine.add(btnPorc);
 		
-		btnQuatro.setBounds(10, 176, 33, 27);
+		btnQuatro.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnQuatro.setMargin(new Insets(1,1,1,1));
+		btnQuatro.setBounds(10, 185, 33, 27);
 		paine.add(btnQuatro);
 		
-		btnCinco.setBounds(20, 20, 33, 27);
+		btnCinco.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnCinco.setMargin(new Insets(1,1,1,1));
+		btnCinco.setBounds(50, 185, 33, 27);
 		paine.add(btnCinco);
 		
-		btnSeis.setBounds(20, 20, 33, 27);
+		btnSeis.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnSeis.setMargin(new Insets(1,1,1,1));
+		btnSeis.setBounds(90, 185, 33, 27);
 		paine.add(btnSeis);
 		
-		btnMult.setBounds(20, 20, 33, 27);
+		btnMult.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMult.setMargin(new Insets(1,1,1,1));
+		btnMult.setBounds(130, 185, 33, 27);
 		paine.add(btnMult);
 		
-		btnUmx.setBounds(20, 20, 33, 27);
+		btnUmx.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnUmx.setMargin(new Insets(1,1,1,1));
+		btnUmx.setBounds(170, 185, 33, 27);
 		paine.add(btnUmx);
 		
-		btnHum.setBounds(10, 206, 33, 27);
+		btnHum.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnHum.setMargin(new Insets(1,1,1,1));
+		btnHum.setBounds(10, 218, 33, 27);
 		paine.add(btnHum);
 		
-		btnDois.setBounds(20, 20, 33, 27);
+		btnDois.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnDois.setMargin(new Insets(1,1,1,1));
+		btnDois.setBounds(50, 218, 33, 27);
 		paine.add(btnDois);
 		
-		btnTres.setBounds(20, 20, 33, 27);
+		btnTres.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnTres.setMargin(new Insets(1,1,1,1));
+		btnTres.setBounds(90, 218, 33, 27);
 		paine.add(btnTres);
 		
-		btnMenos.setBounds(20, 20, 33, 27);
+		btnMenos.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMenos.setMargin(new Insets(1,1,1,1));
+		btnMenos.setBounds(130, 218, 33, 27);
 		paine.add(btnMenos);
 		
-		btnIgual.setBounds(20, 20, 33, 27);
+		btnIgual.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnIgual.setMargin(new Insets(1,1,1,1));
+		btnIgual.setBounds(170, 218, 33, 60);
 		paine.add(btnIgual);
 		
-		btnZero.setBounds(10, 236, 33, 27);
+		btnZero.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnZero.setMargin(new Insets(1,1,1,1));
+		btnZero.setBounds(10, 251, 73, 27);
 		paine.add(btnZero);
 		
-		btnVirg.setBounds(20, 20, 33, 27);
+		btnVirg.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnVirg.setMargin(new Insets(1,1,1,1));
+		btnVirg.setBounds(90, 251, 33, 27);
 		paine.add(btnVirg);
 		
-		btnMais.setBounds(20, 20, 33, 27);
+		btnMais.setFont( new Font( "Arial", Font.PLAIN, 12 ) );
+		btnMais.setMargin(new Insets(1,1,1,1));
+		btnMais.setBounds(130, 251, 33, 27);
 		paine.add(btnMais);
-	
-		/*btnMC.setMargin(new Insets(1,1,1,1));
-		btnMC.setFont( new Font( "Arial", FONT.PLAIN, 12 ) );
-		seuJButton.setBorder(null);
-		seuJButton.setContentAreaFilled(false);*/
 			
 		this.setSize(218, 312);
 		this.setVisible(true);
