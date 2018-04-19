@@ -12,6 +12,7 @@ import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JTextField;
 
@@ -26,10 +27,25 @@ public class Calculadora extends JFrame {
 	JRadioButtonMenuItem radicienti = new JRadioButtonMenuItem("Científica");
 	JRadioButtonMenuItem radiprograma = new JRadioButtonMenuItem("Programador");
 	JRadioButtonMenuItem radiestatist = new JRadioButtonMenuItem("Estatística");
-	JCheckBoxMenuItem cbAgrupamento = new JCheckBoxMenuItem("Agrupamento de Digitos");
+	JCheckBoxMenuItem historico = new JCheckBoxMenuItem("Histórico");
+	JCheckBoxMenuItem cbAgrupamento = new JCheckBoxMenuItem("Agrupamento de digitos");
+	JRadioButtonMenuItem radibasico = new JRadioButtonMenuItem("Básico");
+	JRadioButtonMenuItem radiconvunid = new JRadioButtonMenuItem("Conversão de unidades");
+	JRadioButtonMenuItem radicalcdata = new JRadioButtonMenuItem("Cálculo de data");
 
 	JMenu Editar = new JMenu("Editar");
+	JMenuItem radcopiar = new JMenuItem("Copiar");
+	JMenuItem radcolar = new JMenuItem("Colar");
+	
+	JMenu edithist = new JMenu("Histórico");
+	JMenuItem histcopiar = new JMenuItem("Copiar histórico");
+	JMenuItem histeditar = new JMenuItem("Editar");
+	JMenuItem histcancedicao = new JMenuItem("Cancelar Edição");
+	JMenuItem histlimpar = new JMenuItem("Limpar");
+	
 	JMenu Ajuda = new JMenu("Ajuda");
+	JMenuItem exibeajuda = new JMenuItem("Exibir Ajuda");
+	JMenuItem sobrecalc = new JMenuItem("Sobre a Calculadora");
 
 	JMenuBar menuBar = new JMenuBar();
 
@@ -87,23 +103,39 @@ public class Calculadora extends JFrame {
 		Exibir.add(radiprograma);
 		Exibir.add(radiestatist);
 		Exibir.addSeparator();
-		Exibir.add("Histórico       Crtl + H");
+		Exibir.add(historico);
 		Exibir.add(cbAgrupamento);
 		Exibir.addSeparator();
-
+		Exibir.add(radibasico);
+		Exibir.add(radiconvunid);
+		Exibir.add(radicalcdata);
+		
 		Editar.setFont(new Font("Arial", Font.PLAIN, 12));
 		Editar.setBounds(46, 5, 45, 20);
 		menuBar.add(Editar);
-
+		Editar.add(radcopiar);
+		Editar.add(radcolar);
+		Editar.addSeparator();
+		Editar.add(edithist);
+		
+		edithist.add(histcopiar);
+		edithist.add(histeditar);
+		edithist.add(histcancedicao);
+		edithist.add(histlimpar);
+		
 		Ajuda.setFont(new Font("Arial", Font.PLAIN, 12));
 		Ajuda.setBounds(91, 5, 45, 20);
 		menuBar.add(Ajuda);
+		Ajuda.add(exibeajuda);
+		Ajuda.addSeparator();
+		Ajuda.add(sobrecalc);
 
 		txtVisor.setHorizontalAlignment(JTextField.RIGHT);
 		txtVisor.setFont(new Font("Arial", Font.PLAIN, 25));
 		txtVisor.setMargin(new Insets(1, 1, 1, 1));
 		txtVisor.setBounds(10, 30, 195, 51);
 		paine.add(txtVisor);
+		txtVisor.setText("0");
 
 		btnMC.setFont(new Font("Arial", Font.PLAIN, 12));
 		btnMC.setMargin(new Insets(1, 1, 1, 1));
@@ -112,6 +144,7 @@ public class Calculadora extends JFrame {
 		btnMC.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				valor3 = 0;
+				txtVisor.setText("0");
 			}
 		});
 
@@ -121,7 +154,7 @@ public class Calculadora extends JFrame {
 		paine.add(btnMR);
 		btnMR.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				txtVisor.setText(valor3 + "");
+				txtVisor.setText(valor3 + " M");
 			}
 		});
 
@@ -144,7 +177,7 @@ public class Calculadora extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				valor2 = Double.parseDouble(txtVisor.getText());
 				valor3 = calculos.soma(valor3, valor2);
-				txtVisor.setText("M");
+				txtVisor.setText(" M");
 			}
 		});		
 
@@ -156,7 +189,7 @@ public class Calculadora extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				valor2 = Double.parseDouble(txtVisor.getText());
 				valor3 = calculos.subtrai(valor3, valor2);
-				txtVisor.setText("M");
+				txtVisor.setText(" M");
 			}
 		});
 
