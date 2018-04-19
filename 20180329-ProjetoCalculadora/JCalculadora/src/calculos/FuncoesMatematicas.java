@@ -20,7 +20,7 @@ public class FuncoesMatematicas {
 		return Math.sqrt(a);
 	}
 	public double porc(double a, double b) {
-		return a*(b/100);
+		return (a*b)/100;
 	}
 	public double fracao(double a) {
 		return 1/a;
